@@ -11,7 +11,10 @@ st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
 # =====================
 # LOAD DATA
 # =====================
-df = pd.read_csv("main_data.csv")
+import os
+
+file_path = os.path.join(os.path.dirname(__file__), "main_data.csv")
+df = pd.read_csv(file_path)
 df["dteday"] = pd.to_datetime(df["dteday"])
 
 # =====================
